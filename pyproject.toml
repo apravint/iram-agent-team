@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iram-agent-team"
+version = "0.1.0"
+description = "Testable, traceable multi-agent engineering team with cyclic state graphs and ToolGate firewall"
+authors = [{ name = "IRAM OS Team" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "pytest>=7.0.0"
+]
+
+[project.scripts]
+iram-team = "iram_team.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
